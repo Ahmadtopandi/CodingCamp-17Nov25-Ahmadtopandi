@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmad Topandi - Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">AT</div>
+                <span>Ahmad Topandi</span>
+            </div>
+            <nav class="nav">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#profile" class="nav-link">Profile</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <button class="menu-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="section home">
+        <div class="container">
+            <div class="home-content">
+                <h1 id="welcome-text">Halo, Saya Ahmad Topandi</h1>
+                <p>Programer</p>
+                <div class="buttons">
+                    <a href="#portfolio" class="btn btn-primary">Lihat Portfolio</a>
+                    <a href="#contact" class="btn btn-secondary">Hubungi Saya</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section id="profile" class="section profile">
+        <div class="container">
+            <h2 class="section-title">Tentang Saya</h2>
+            <div class="profile-content">
+                <div class="profile-image">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="profile-text">
+                    <h3>Ahmad Topandi</h3>
+                    <p class="title">Programer</p>
+                    <p>Saya seorang programer dengan pengalaman dalam membuat website, 
+                       aplikasi absensi dengan menggunakan mikrokontroler arduino uno, dan dapat menbuat aplikasi mobile.</p>
+                    
+                    <div class="skills">
+                        <h4>Keahlian:</h4>
+                        <div class="skill-list">
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section portfolio">
+        <div class="container">
+            <h2 class="section-title">Portfolio</h2>
+            <p class="section-subtitle">Project yang telah saya kerjakan</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-img web"></div>
+                    <div class="portfolio-info">
+                        <h3>Absensi Web</h3>
+                        <p>Absensi dengan aplikasi web menggunakan mikrokontroler arduino uno dan RFID</p>
+                        <div class="tech">PHP . MySQL</div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-img mobile"></div>
+                    <div class="portfolio-info">
+                        <h3>Game Unity</h3>
+                        <p>Game banun dengan mengumpulkan poin mencari burger</p>
+                        <div class="tech">C#</div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-img dashboard"></div>
+                    <div class="portfolio-info">
+                        <h3>Dashboard Admin</h3>
+                        <p>Panel admin dengan analytics dan reporting</p>
+                        <div class="tech">Vue.js · Express · MySQL</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Hubungi Saya</h2>
+            <p class="section-subtitle">Mari berkolaborasi untuk project Anda</p>
+            
+            <div class="contact-content">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nama</label>
+                        <input type="text" id="name" placeholder="Nama" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="birthdate">Tanggal Lahir</label>
+                        <input type="date" id="birthdate" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Jenis Kelamin</label>
+                        <div class="gender-options">
+                            <div class="gender-option">
+                                <input type="radio" id="male" name="gender" value="Laki-Laki" required>
+                                <label for="male">Laki-Laki</label>
+                            </div>
+                            <div class="gender-option">
+                                <input type="radio" id="female" name="gender" value="Perempuan" required>
+                                <label for="female">Perempuan</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Pesan</label>
+                        <textarea id="message" placeholder="Pesan" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                
+                <div class="contact-info">
+                    <div class="result-display" id="resultDisplay">
+                        <div class="result-header">
+                            <h3>Data yang Dikirim</h3>
+                            <div class="current-time" id="currentTime"></div>
+                        </div>
+                        <div class="result-item">
+                            <strong>Nama :</strong>
+                            <span id="resultName">-</span>
+                        </div>
+                        <div class="result-item">
+                            <strong>Tanggal Lahir :</strong>
+                            <span id="resultBirthdate">-</span>
+                        </div>
+                        <div class="result-item">
+                            <strong>Jenis Kelamin :</strong>
+                            <span id="resultGender">-</span>
+                        </div>
+                        <div class="result-item">
+                            <strong>Pesan :</strong>
+                            <span id="resultMessage">-</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <p>ahmadtopandi22@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Telepon</strong>
+                                <p>+62 857-3456-7890</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Lokasi</strong>
+                                <p>Karawang, Indonesia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Ahmad Topandi. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
